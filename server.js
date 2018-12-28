@@ -10,6 +10,10 @@ const RedisCache = _kayn.RedisCache;
 const fs = require("fs");
 const myCache = new LRUCache({ max: 5 });
 
+const key = fs.readFileSync("./APIKEY.txt", "utf8");
+const app = express();
+const port = process.env.PORT || 5000;
+
 const kayn = Kayn(key)({
   region: "na",
   debugOptions: {
@@ -36,3 +40,8 @@ const kayn = Kayn(key)({
     }
   }
 });
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.listen(port);
