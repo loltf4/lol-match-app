@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import NavBar from "./components/NavBar.jsx";
+import NavBar from "./components/navbar.jsx";
 
 class App extends Component {
   state = {
-    playerName: ""
+    playerName: "",
+    playerIcon: "/assets/lolMatchApp.png"
   };
 
   handleSearch = async playerName => {
@@ -16,6 +17,7 @@ class App extends Component {
         <NavBar
           onSearch={this.handleSearch}
           playerName={this.state.playerName}
+          playerIcon={this.state.playerIcon}
         />
       </React.Fragment>
     );

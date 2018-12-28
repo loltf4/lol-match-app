@@ -14,7 +14,7 @@ class NavBar extends Component {
         <nav className="navbar navbar-dark bg-dark">
           <div>
             <img
-              src={window.location.origin + "/assets/lolMatchApp.png"}
+              src={window.location.origin + this.props.playerIcon}
               className="rounded mr-1"
               style={{ width: 50, height: 50 }}
               alt=""
