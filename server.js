@@ -70,11 +70,19 @@ const getInfo = async name => {
   }
   //gets champion specific data from data dragon
   const champs = await kayn.DDragon.Champion.listFullDataByIdWithParentAsId();
-  const summSpells = DDragon.SummonerSpell.list();
+  //I DO NOT UNDERSTAND THE VALUE OF IDs BEING THE STRINGS IM TRYING TO FIND BY COORILATION TO ID!
+  // :(
+  const summSpells = await kayn.DDragon.SummonerSpell.list(); //FullDataByIdWithParentAsId
   /* builds a LARGEjson unit from all the data collected from the API
    (some of these can be trimmed off due to value duplication [ex. summoner]) */
-  account = Object.assign(summoner, matches, champs, summSpells, {
-    ttlMatches
-  });
+  account = Object.assign(
+    summoner,
+    matches,
+    champs,
+    { summonerSpells: summSpells },
+    {
+      ttlMatches
+    }
+  );
   return account;
 };

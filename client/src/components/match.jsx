@@ -11,7 +11,7 @@ class Match extends Component {
     return classes;
   };
 
-  handleSpell = spellID => {
+  handleSpell = () => {
     return "Flash";
   };
 

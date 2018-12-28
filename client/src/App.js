@@ -55,8 +55,10 @@ class App extends Component {
             account.name
           ) {
             //Summoner spells WANTED to put these into 1 variable with an array but... time restrictions
-            summSpell1 = account[i].participants[j].spell1Id;
-            summSpell2 = account[i].participants[j].spell2Id;
+            //let spell1 = account[i].participants[j].spell1Id;
+            //let spell2 = account[i].participants[j].spell2Id;
+            //summSpell1 = account.summonerSpells.data.key[spell1];
+            console.log(account.summonerSpells.data);
             //Champions name
             selectedChamp =
               account.data[account[i].participants[j].championId].name;
