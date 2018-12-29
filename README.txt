@@ -4,7 +4,8 @@ Brock Forest
 December 28, 2018
 
 To run:
-    yarn run publish
+    yarn run local //local run
+    yarn run publish //online build
 
 Could Improve:
     No user feedback on whats happening if they enter incorrect information
