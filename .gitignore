@@ -22,3 +22,5 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#.env #would usually include this but dont mind uploading the API_KEY
