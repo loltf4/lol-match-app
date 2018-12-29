@@ -4,10 +4,9 @@ const _kayn = require("kayn");
 const Kayn = _kayn.Kayn;
 const METHOD_NAMES = _kayn.METHOD_NAMES;
 const LRUCache = _kayn.LRUCache;
-const fs = require("fs");
 const myCache = new LRUCache({ max: 5 });
 
-const key = fs.readFileSync("./APIKEY.txt", "utf8");
+const key = process.env.API_KEY;
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -84,5 +83,16 @@ const getInfo = async name => {
       ttlMatches
     }
   );
+
+  /* I went back a day later and after thinking for all of 1 moment solved my issue
+     I was stuck in the mindset of arrays and failed to think of how to access the
+     info if it was indexed by a string and then the obvious solution dawned on me
+     as it is past the 4 hour mark I won't implement my solve */
+  // for (let i in account.summonerSpells.data) {
+  //I would actually check if its the summonerSpellId i got from the other information
+  //   if (account.summonerSpells.data[i].key === "4") {
+  //     console.log("I found flash in the DDragon list");
+  //   }
+  // }
   return account;
 };
